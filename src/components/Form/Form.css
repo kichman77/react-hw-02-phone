@@ -1,0 +1,21 @@
+body {
+  background-color: black;
+  color: wheat;
+}
+
+.contactForm {
+  outline: 1px solid wheat;
+}
+.inputName {
+  display: block;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.formBtn {
+  padding: 5px;
+  font-size: 15px;
+  margin-bottom: 10px;
+  
+}

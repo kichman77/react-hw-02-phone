@@ -1,17 +1,55 @@
-import React from 'react';
-import './Form.css'
+import React, { Component } from 'react';
+import './Form.css';
 
-const Form = () => {
-  return (
-
-    <form className='contactForm'>
-      <label>Name
-        <input name    ='name' className='inputName' />
-      </label>
-      <button className='formBtn' type='submit'>Add contact</button>
-    </form>
-
-  );
+const initialState = {
+  name: '',
+  number: '',
 };
+
+class Form extends Component {
+  state = {
+    ...initialState,
+  };
+
+  onHandleChange = e => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  };
+
+  onHandleSubmit = e => {
+    e.preventDefault();
+    // console.log({ ...this.state });
+    this.props.addContact({ ...this.state });
+    this.setState({ ...initialState });
+  };
+
+  render() {
+    return (
+      <form className="contactForm" onSubmit={this.onHandleSubmit}>
+        <label>
+          Name
+          <input
+            onChange={this.onHandleChange}
+            name="name"
+            className="inputName"
+            value={this.state.name}
+          />
+        </label>
+        <label>
+          Number
+          <input
+            onChange={e => this.onHandleChange(e)}
+            name="number"
+            className="inputNumber"
+            value={this.state.number}
+          />
+        </label>
+        <button className="formBtn" type="submit">
+          Add contact
+        </button>
+      </form>
+    );
+  }
+}
 
 export default Form;

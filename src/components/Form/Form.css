@@ -5,8 +5,10 @@ body {
 
 .contactForm {
   outline: 1px solid wheat;
+  margin-bottom: 10px;
 }
-.inputName {
+.inputName,
+.inputNumber {
   display: block;
   padding: 5px;
   margin-top: 10px;
@@ -17,5 +19,4 @@ body {
   padding: 5px;
   font-size: 15px;
   margin-bottom: 10px;
-  
 }

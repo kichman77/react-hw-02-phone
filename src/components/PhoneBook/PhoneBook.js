@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Form from '../Form/Form';
 import ContactList from '../ContactList/ContactList';
 import { v4 as uuidv4 } from 'uuid';
-import Filter from '../Filter/Filter'
+import Filter from '../Filter/Filter';
 
 class PhoneBook extends Component {
   state = {
@@ -13,10 +13,10 @@ class PhoneBook extends Component {
   };
   addContact = contact => {
     this.state.contacts.some(item => item.name === contact.name)
-      ? alert('this contact in base')
+      ? alert('This contact in base')
       : this.setState(prev => ({
-      contacts: [...prev.contacts, { ...contact, id: uuidv4() }],
-    }));
+          contacts: [...prev.contacts, { ...contact, id: uuidv4() }],
+        }));
   };
 
   deleteContact = id => {
@@ -35,7 +35,10 @@ class PhoneBook extends Component {
     const { name, value } = e.target;
     this.setState({ [name]: value });
   };
+
+
   render() {
+    // console.log(this.props);
     return (
       <>
         <h1 className="title">PhoneBook</h1>
@@ -47,7 +50,9 @@ class PhoneBook extends Component {
         />
 
         <ContactList
-          contacts={this.state.filter ? this.filterContact():this.state.contacts}
+          contacts={
+            this.state.filter ? this.filterContact() : this.state.contacts
+          }
           deleteContact={this.deleteContact}
         />
       </>

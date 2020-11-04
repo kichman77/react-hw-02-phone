@@ -1,7 +1,8 @@
 .filterLable {
-  display: block;
+  display: flex;
 }
 
 .filterInput {
+  padding: 5px;
   margin-left: 10px;
 }

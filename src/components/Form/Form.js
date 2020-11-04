@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Form.css';
+import PropTypes from 'prop-types';
 
 const initialState = {
   name: '',
@@ -24,6 +25,7 @@ class Form extends Component {
   };
 
   render() {
+    // console.log(this.props);
     return (
       <form className="contactForm" onSubmit={this.onHandleSubmit}>
         <label>
@@ -53,3 +55,7 @@ class Form extends Component {
 }
 
 export default Form;
+
+Form.propTypes = {
+addContact: PropTypes.func.isRequired
+}

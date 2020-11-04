@@ -9,10 +9,12 @@ class PhoneBook extends Component {
     contacts: [],
     filter: '',
     name: '',
-    // number: '',
+    number: '',
   };
   addContact = contact => {
-    this.setState(prev => ({
+    this.state.contacts.some(item => item.name === contact.name)
+      ? alert('this contact in base')
+      : this.setState(prev => ({
       contacts: [...prev.contacts, { ...contact, id: uuidv4() }],
     }));
   };

@@ -39,7 +39,7 @@ class Form extends Component {
           Number
           <input
             onChange={e => this.onHandleChange(e)}
-            name="number"
+            name = "number"
             className="inputNumber"
             value={this.state.number}
           />

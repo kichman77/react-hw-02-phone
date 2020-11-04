@@ -1,4 +1,7 @@
-.contactsLable{
-  display: flex;
+.filterLable {
+  display: block;
+}
 
+.filterInput {
+  margin-left: 10px;
 }
